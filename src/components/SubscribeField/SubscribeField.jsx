@@ -1,4 +1,5 @@
 import React from 'react';
+import emailSubscribers from '../../services/emailSubscribers';
 
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
@@ -33,9 +34,17 @@ class SubscribeField extends React.Component {
     e.preventDefault();
 
     if (formValid(this.state)) {
+      const doc = {
+        signUpDate: new Date(),
+        email: this.state.email,
+        active: true,
+      };
+      emailSubscribers.addEmail(doc);
       console.log(`
         --SUBMITTING--
-        Email: ${this.state.email}
+        Email: ${doc.email}
+        SignUpDate: ${doc.signUpDate}
+        Active: ${doc.active}
       `);
     } else {
       console.error('FORM INVALID - DISPLAY ERROR MESSAGE');
