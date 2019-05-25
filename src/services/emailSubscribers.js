@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const addEmail = (doc) => {
-  const url = process.env.REST_API_LOCATION + process.env.CREATE_EMAIL_SUBSCRIBER;
+  const url = `${process.env.REST_API_LOCATION}emailSubscriber`;
   fetch(url, {
     method: 'POST',
     body: JSON.stringify(doc),
