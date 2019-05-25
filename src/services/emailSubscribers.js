@@ -1,9 +1,8 @@
 require('dotenv').config();
 
 const addEmail = (doc) => {
-  const url = 'https://joker-backend-staging.herokuapp.com/api/';
-
-  fetch(process.env.REST_API_LOCATION + process.env.CREATE_EMAIL_SUBSCRIBER, {
+  const url = process.env.REST_API_LOCATION + process.env.CREATE_EMAIL_SUBSCRIBER;
+  fetch(url, {
     method: 'POST',
     body: JSON.stringify(doc),
     headers: {
