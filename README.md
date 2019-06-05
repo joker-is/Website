@@ -1,3 +1,17 @@
+# Public Website
+
+## Work in progress.
+
+## What is it
+This a the public website for the moc website Joker that i am making.
+- The front end is now only a simple form that alows the user to input its email.
+- The email is then sent to the backend to be stored in the mongodb database.
+### TODO
+- Plan on what the website will be
+- ...
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
